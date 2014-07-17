@@ -1,7 +1,7 @@
 \ FLOATING POINT MATH FOR FLASHFORTH 5.0
 \ IgorM 7/2014
 \ MODIFIED AND STRIPPED DOWN LEON's FP LIB FOR AMFORTH
-\ UNDER GPL LICENCE
+\ UNDER GPL v2 LICENCE
 
 
 \ All the files that make up this library are copyright 2013 by Leon Maurer.
@@ -18,7 +18,7 @@ marker -fpmath
 
 decimal
 
-\ ## IgorM: ADDED WORDS (you need DO_LOOP as well)
+\ ## IgorM: ADDED WORDS (you need DO-LOOP as well!! )
 
 : not 0= ; 
 

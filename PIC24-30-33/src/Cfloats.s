@@ -1,3 +1,7 @@
+// IgorM 7/2014
+// Asm floats routines for FF 5.0
+
+
 ; float add
 CFADD_L:
         .byte   NFA|2

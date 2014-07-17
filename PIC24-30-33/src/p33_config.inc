@@ -1,5 +1,5 @@
 ;;; FlashForth device configuration for the dsPIC33
-;;; PITO chanegs for my board
+;;; IgorM changes for my board
 
 ;;; Device memory sizes. Set according to your device.
 ;;; You can increase the addressable flash range be decreasing the addressable ram.

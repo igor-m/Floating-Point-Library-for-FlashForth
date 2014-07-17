@@ -1,3 +1,7 @@
+// IgorM 7/2014
+// C floats routines for FF 5.0
+
+
 #include <stddef.h>
 #include <math.h>
 

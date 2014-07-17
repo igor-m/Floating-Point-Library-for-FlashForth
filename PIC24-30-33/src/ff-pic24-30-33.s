@@ -6,6 +6,10 @@
 ;    Copyright:     Mikael Nordman                                    *
 ;    Author:        Mikael Nordman                                    *
 ;                                                                     * 
+;    16-7-2014 IgorM added - include for the Cfloat.s                 * 
+;                                                                     * 
+;                                                                     * 
+;                                                                     * 
 ;**********************************************************************
 ; FlashForth is a standalone Forth system for microcontrollers that
 ; can flash their own flash memory.
