@@ -63,13 +63,15 @@ s>f f/ Fcy s>f 1000 s>f f* f* cpi f/ fe. ." CPU INSTRs per fexp" ;
 30000 s>f f/ Fcy s>f 1000 s>f f* f* cpi f/ fe. ." CPU INSTRs per fsqrt" ;
 
 
-benche 35.0069E0 INSTRs empty ok<#,ram>
-b+ 2.49101E3 CPU INSTRs per f+ ok<#,ram>
-b- 2.72317E3 CPU INSTRs per f- ok<#,ram>
-b* 26.6107E3 CPU INSTRs per f* ok<#,ram>
-b/ 13.2768E3 CPU INSTRs per f/ ok<#,ram>
-bsin 315.614E3 CPU INSTRs per fsin ok<#,ram>
-bcos 317.457E3 CPU INSTRs per fcos ok<#,ram>
-btan 645.600E3 CPU INSTRs per ftan ok<#,ram>
-batan 95.9004E3 CPU INSTRs per fatan ok<#,ram>
+benche 35.0069E0 INSTRs empty loop ok<#,ram>
+b+ 279.134E0 CPU INSTRs per f+ ok<#,ram>
+b- 277.291E0 CPU INSTRs per f- ok<#,ram>
+b* 171.349E0 CPU INSTRs per f* ok<#,ram>
+b/ 435.743E0 CPU INSTRs per f/ ok<#,ram>
+bsin 2.26716E3 CPU INSTRs per fsin ok<#,ram>
+bcos 3.03178E3 CPU INSTRs per fcos ok<#,ram>
+btan 2.90925E3 CPU INSTRs per ftan ok<#,ram>
+blog 2.53247E3 CPU INSTRs per flog ok<#,ram>
+bexp 3.04007E3 CPU INSTRs per fexp ok<#,ram>
+bsqrt 525.103E0 CPU INSTRs per fsqrt ok<#,ram>
 
