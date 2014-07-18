@@ -44,6 +44,7 @@ Leon's original fp library:
 https://github.com/lnmaurer/amforth-float
 
 
-All under the same Licence as the originals.
+All under the GPL v2 licence.
+
 
 
