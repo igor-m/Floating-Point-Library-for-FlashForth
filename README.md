@@ -1,4 +1,4 @@
-Beta only as of 17-5-2014
+Beta only as of 17-7-2014
 
 This is a part of the FlashForth 5.0 for pic24/33 with added Cfloats.c and Cfloat.s 
 for floating point support.
@@ -26,17 +26,17 @@ Tested under FlashForth 5.0 and dspic33fj128gp802.
 
 Benchmarks of some fp words (do subtract the empty loop):
 
-benche 35.0069E0 INSTRs empty loop ok<#,ram>
-b+ 279.134E0 CPU INSTRs per f+ ok<#,ram>
-b- 277.291E0 CPU INSTRs per f- ok<#,ram>
-b* 171.349E0 CPU INSTRs per f* ok<#,ram>
-b/ 435.743E0 CPU INSTRs per f/ ok<#,ram>
-bsin 2.26716E3 CPU INSTRs per fsin ok<#,ram>
-bcos 3.03178E3 CPU INSTRs per fcos ok<#,ram>
-btan 2.90925E3 CPU INSTRs per ftan ok<#,ram>
-blog 2.53247E3 CPU INSTRs per flog ok<#,ram>
-bexp 3.04007E3 CPU INSTRs per fexp ok<#,ram>
-bsqrt 525.103E0 CPU INSTRs per fsqrt ok<#,ram>
+  benche 35.0069E0 INSTRs empty loop ok<#,ram>  
+  b+ 279.134E0 CPU INSTRs per f+ ok<#,ram>  
+  b- 277.291E0 CPU INSTRs per f- ok<#,ram>  
+  b* 171.349E0 CPU INSTRs per f* ok<#,ram>  
+  b/ 435.743E0 CPU INSTRs per f/ ok<#,ram>  
+  bsin 2.26716E3 CPU INSTRs per fsin ok<#,ram>  
+  bcos 3.03178E3 CPU INSTRs per fcos ok<#,ram>  
+  btan 2.90925E3 CPU INSTRs per ftan ok<#,ram>  
+  blog 2.53247E3 CPU INSTRs per flog ok<#,ram>  
+  bexp 3.04007E3 CPU INSTRs per fexp ok<#,ram>  
+  bsqrt 525.103E0 CPU INSTRs per fsqrt ok<#,ram>  
 
 
 Leon's original fp library:
