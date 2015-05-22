@@ -1,5 +1,6 @@
 // IgorM 7/2014
 // Asm floats routines for FF 5.0
+// Under GNU GPL v3
 
 
 ; float add

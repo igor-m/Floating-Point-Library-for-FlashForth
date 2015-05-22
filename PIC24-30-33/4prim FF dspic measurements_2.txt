@@ -1,3 +1,6 @@
+\  Test floating point
+\  IgorM 2015
+\  Under GNU GPL v3
 
 -mytest1
 marker -mytest1
