@@ -26,7 +26,6 @@ Tested under FlashForth 5.0 and dspic33fj128gp802.
 
 Benchmarks of some fp words :
 
-  
 
 b+ 228.864e0 CPU INSTRs per f+ ok<#,ram>
 b- 228.864e0 CPU INSTRs per f- ok<#,ram>
@@ -45,20 +44,13 @@ bcosh 3.81542e3 CPU INSTRs per fcosh ok<#,ram>
 btanh 4.15488e3 CPU INSTRs per ftanh ok<#,ram>  
 
 
-
-
 Leon's original fp library written in forth:
 
 
 https://github.com/lnmaurer/amforth-float
 
 
-
-
 All under the GPL v3 licence.
 
-
-
-
-
 IgorM c 2015
+
