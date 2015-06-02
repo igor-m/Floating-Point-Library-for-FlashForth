@@ -22,9 +22,9 @@ Then:
 1. you have to upload the do-loop
 2. you have to upload the FF_float_NOPRIM_5.fth	(the stripped down and modded Leon's lib)  
 
-Tested under FlashForth 5.0 and dspic33fj128gp802. 
+Tested under FlashForth 5.0 and dspic33/pic24. 
 
-Benchmarks of some fp words :
+Benchmarks of some fp words (assuming 1 cpu instr per clock in average):
 
 
 	b+ 228.864e0 CPU INSTRs per f+ ok<#,ram>
