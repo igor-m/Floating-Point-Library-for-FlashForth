@@ -27,25 +27,24 @@ Tested under FlashForth 5.0 and dspic33fj128gp802.
 Benchmarks of some fp words :
 
 
-b+ 228.864e0 CPU INSTRs per f+ ok<#,ram>
-b- 228.864e0 CPU INSTRs per f- ok<#,ram>
-b* 122.880e0 CPU INSTRs per f* ok<#,ram>
-b/ 390.144e0 CPU INSTRs per f/ ok<#,ram>
-bsin 2.22106e3 CPU INSTRs per fsin ok<#,ram>
-bcos 2.98445e3 CPU INSTRs per fcos ok<#,ram>
-btan 2.86310e3 CPU INSTRs per ftan ok<#,ram>
-blog 2.48525e3 CPU INSTRs per flog ok<#,ram>
-bexp 3.05818e3 CPU INSTRs per fexp ok<#,ram>
-bsqrt 479.232e0 CPU INSTRs per fsqrt ok<#,ram>
-bpow 8.66611e3 CPU INSTRs per fpow ok<#,ram>
-batan2 3.23942e3 CPU INSTRs per fatan2 ok<#,ram>
-bsinh 3.89376e3 CPU INSTRs per fsinh ok<#,ram>
-bcosh 3.81542e3 CPU INSTRs per fcosh ok<#,ram>
-btanh 4.15488e3 CPU INSTRs per ftanh ok<#,ram>  
+	b+ 228.864e0 CPU INSTRs per f+ ok<#,ram>
+	b- 228.864e0 CPU INSTRs per f- ok<#,ram>
+	b* 122.880e0 CPU INSTRs per f* ok<#,ram>
+	b/ 390.144e0 CPU INSTRs per f/ ok<#,ram>
+	bsin 2.22106e3 CPU INSTRs per fsin ok<#,ram>
+	bcos 2.98445e3 CPU INSTRs per fcos ok<#,ram>
+	btan 2.86310e3 CPU INSTRs per ftan ok<#,ram>
+	blog 2.48525e3 CPU INSTRs per flog ok<#,ram>
+	bexp 3.05818e3 CPU INSTRs per fexp ok<#,ram>
+	bsqrt 479.232e0 CPU INSTRs per fsqrt ok<#,ram>
+	bpow 8.66611e3 CPU INSTRs per fpow ok<#,ram>
+	batan2 3.23942e3 CPU INSTRs per fatan2 ok<#,ram>
+	bsinh 3.89376e3 CPU INSTRs per fsinh ok<#,ram>
+	bcosh 3.81542e3 CPU INSTRs per fcosh ok<#,ram>
+	btanh 4.15488e3 CPU INSTRs per ftanh ok<#,ram>
 
 
 Leon's original fp library written in forth:
-
 
 https://github.com/lnmaurer/amforth-float
 
