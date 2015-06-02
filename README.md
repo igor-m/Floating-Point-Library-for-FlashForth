@@ -19,12 +19,13 @@ After you compile the FF asm, you may see these new floating point words
 within the basic wordset of FF.
 
 Then:
+
 	1. you have to upload the do-loop
 	2. you have to upload the FF_float_NOPRIM_5.fth	(the stripped down and modded Leon's lib)  
 
 Tested under FlashForth 5.0 and dspic33/pic24. 
 
-Benchmarks of some fp words (assuming 1.5 cpu instr per clock in an average):
+Benchmarks of some fp words (assuming 1.5 clock per cpu instr in an average):
 
 
 	b+ 152.576e0 CPU INSTRs per f+ ok<#,ram>
