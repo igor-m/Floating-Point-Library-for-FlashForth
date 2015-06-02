@@ -1,5 +1,5 @@
 \  Test floating point
-\  IgorM c 2015
+\  IgorM copyright 2011-2015
 \  Under GNU GPL v3
 \  v.2.0
 \    2.6.2015:
@@ -11,6 +11,7 @@ marker -mytest1
 
 11111 s>f fconstant                     _1e4
 -11111 s>f 10000 s>f f/ fconstant         _-1
+11111 s>f 10000 s>f f/ fconstant         _1
 
 \ average cpu clocks per instruction
 1.5e fconstant cpi   
@@ -43,11 +44,6 @@ s>f f/ Fcy #0 d>f 1000 s>f f* f* cpi f/ emptyloop f@ f- fe. ." CPU INSTRs per f*
 : tst/ 30000 for _-1 _1e4 f/ fdrop next ;
 : b/ ticks tst/ ticks swap - s>f 1000 s>f f/ 30000 
 s>f f/ Fcy #0 d>f 1000 s>f f* f* cpi f/ emptyloop f@ f- fe. ." CPU INSTRs per f/" ;
-
-
--11111 s>f 10000 s>f f/ fconstant         _-1
-11111 s>f 10000 s>f f/ fconstant         _1
-1 s>f fconstant cpi
 
 : tstsin 30000 for _-1 fsin fdrop next ;
 : bsin ticks tstsin ticks swap - s>f 1000 s>f f/ 30000 
