@@ -13,7 +13,8 @@ marker -mytest1
 -11111 s>f 10000 s>f f/ fconstant         _-1
 
 \ average cpu clocks per instruction
-1 s>f fconstant cpi
+1.5e fconstant cpi
+\ 1 s>f fconstant cpi
 \ 2 s>f fconstant cpi
 \ 4 s>f fconstant cpi
 
@@ -96,19 +97,19 @@ s>f f/ Fcy #0 d>f 1000 s>f f* f* cpi f/ emptyloop f@ f- fe. ." CPU INSTRs per fe
 bempty
 
 \ Results PIC24
-b+ 228.864e0 CPU INSTRs per f+ ok<#,ram>
-b- 228.864e0 CPU INSTRs per f- ok<#,ram>
-b* 122.880e0 CPU INSTRs per f* ok<#,ram>
-b/ 390.144e0 CPU INSTRs per f/ ok<#,ram>
-bsin 2.22106e3 CPU INSTRs per fsin ok<#,ram>
-bcos 2.98445e3 CPU INSTRs per fcos ok<#,ram>
-btan 2.86310e3 CPU INSTRs per ftan ok<#,ram>
-blog 2.48525e3 CPU INSTRs per flog ok<#,ram>
-bexp 3.05818e3 CPU INSTRs per fexp ok<#,ram>
-bsqrt 479.232e0 CPU INSTRs per fsqrt ok<#,ram>
-bpow 8.66611e3 CPU INSTRs per fpow ok<#,ram>
-batan2 3.23942e3 CPU INSTRs per fatan2 ok<#,ram>
-bsinh 3.89376e3 CPU INSTRs per fsinh ok<#,ram>
-bcosh 3.81542e3 CPU INSTRs per fcosh ok<#,ram>
-btanh 4.15488e3 CPU INSTRs per ftanh ok<#,ram>
+b+ 152.576e0 CPU INSTRs per f+ ok<#,ram>
+b- 152.576e0 CPU INSTRs per f- ok<#,ram>
+b* 81.9200e0 CPU INSTRs per f* ok<#,ram>
+b/ 260.096e0 CPU INSTRs per f/ ok<#,ram>
+bsin 1.48070e3 CPU INSTRs per fsin ok<#,ram>
+bcos 1.98963e3 CPU INSTRs per fcos ok<#,ram>
+btan 1.90874e3 CPU INSTRs per ftan ok<#,ram>
+blog 1.65683e3 CPU INSTRs per flog ok<#,ram>
+bexp 2.03878e3 CPU INSTRs per fexp ok<#,ram>
+bsqrt 319.488e0 CPU INSTRs per fsqrt ok<#,ram>
+bpow 5.77741e3 CPU INSTRs per fpow ok<#,ram>
+batan2 2.15962e3 CPU INSTRs per fatan2 ok<#,ram>
+bsinh 2.59584e3 CPU INSTRs per fsinh ok<#,ram>
+bcosh 2.54362e3 CPU INSTRs per fcosh ok<#,ram>
+btanh 2.76992e3 CPU INSTRs per ftanh ok<#,ram>
 
