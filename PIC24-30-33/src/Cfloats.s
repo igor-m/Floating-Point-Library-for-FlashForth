@@ -1,6 +1,8 @@
-// IgorM 7/2014
-// Asm floats routines for FF 5.0
-// Under GNU GPL v3
+;;; IgorM copyright 7/2014 (v.0.1)
+;;; IgorM copyright June 3rd 2015 (v.0.2)
+;;; Asm floats routines library
+;;; Calls external math functions in the file Cfloats.c 
+;;; License under GNU GPL v3
 
 
 ; float add
@@ -253,3 +255,70 @@ CFACOS_:
 
         .pword  paddr(CFACOS_L)+PFLASH		
 
+;;; Added 3-6-2015 by IgorM, (v0.2)
+
+; float atan2
+CFATAN2_L:
+        .byte   NFA|6
+        .ascii  "fatan2"
+        .align  2
+CFATAN2_:
+        mov     [W14--], W3
+        mov     [W14--], W2
+        mov     [W14--], W1
+        mov     [W14], W0
+        .extern Cfatan2
+        call    _Cfatan2
+        mov     W0, [W14++]
+        mov     W1, [W14]
+        return
+
+        .pword  paddr(CFATAN2_L)+PFLASH
+	
+; float cosh
+CFCOSH_L:
+        .byte   NFA|5
+        .ascii  "fcosh"
+        .align  2
+CFCOSH_:
+        mov     [W14--], W1
+        mov     [W14], W0
+        .extern Cfcosh
+        call    _Cfcosh
+        mov     W0, [W14++]
+        mov     W1, [W14]
+        return
+
+        .pword  paddr(CFCOSH_L)+PFLASH	
+
+; float sinh
+CFSINH_L:
+        .byte   NFA|5
+        .ascii  "fsinh"
+        .align  2
+CFSINH_:
+        mov     [W14--], W1
+        mov     [W14], W0
+        .extern Cfsinh
+        call    _Cfsinh
+        mov     W0, [W14++]
+        mov     W1, [W14]
+        return
+
+        .pword  paddr(CFSINH_L)+PFLASH	
+	
+; float tanh
+CFTANH_L:
+        .byte   NFA|5
+        .ascii  "ftanh"
+        .align  2
+CFTANH_:
+        mov     [W14--], W1
+        mov     [W14], W0
+        .extern Cftanh
+        call    _Cftanh
+        mov     W0, [W14++]
+        mov     W1, [W14]
+        return
+
+        .pword  paddr(CFTANH_L)+PFLASH	

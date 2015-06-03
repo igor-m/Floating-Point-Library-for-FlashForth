@@ -1,7 +1,8 @@
-\ FLOATING POINT MATH LIBRARY FOR FLASHFORTH 5.0
-\ IgorM (c) 7/2014
+\ FLOATING POINT MATH FOR FLASHFORTH 5.0
+\ IgorM (c) 7/2014 (v5)
+\ IgorM (c) June 3rd 2015 (v6)
 \ MODIFIED AND STRIPPED DOWN LEON's FP LIB FOR AMFORTH https://github.com/lnmaurer/amforth-float
-\ UNDER GNU GPL v3 LICENCE
+\ UNDER GPL v2 LICENCE
 
 
 -fpmath
@@ -599,6 +600,118 @@ decimal
     69 emit r> . \ print the exponent
   then
 ;
+
+\ NOW, FOR INPUT, HELPER WORDS FIRST
+
+\ COME UP WITH BETTER NAMES FOR NEXT TWO
+\ returns the number that occupies the part of the string from n-location + 1 to the end
+: partnumber ( n-adr n-length n-location -- n )
+  swap over - 1- rot rot + 1+ swap ( new_adr new_length )
+  number nip 0= if -13 throw then ;
+
+\ the last returned value is true if the charcter was found, and false if not
+: extract ( n-adr n-length c-char -- n-adr n-new-length n-extracted true|false )
+  >r over over r> cscan nip ( adr count loc )
+  over over = 
+  if \ character not found
+    false
+  else \ character found, note that loc becomes new-length
+    swap >r ( adr loc, R: length )
+    over over r> swap ( adr loc adr length loc )
+    partnumber true
+  then ;
+
+\ the plan is to first get the exponent (if there is one)
+\ then we take care of the sign, if any
+\ next, we start storing the digits in to a double while keeping track
+\ of the exponent. For example 12.34e will get turned in to the double
+\ 1234, so we need to decriment the exponent by two (one for each digit
+\ after the decimal place) to get the right answer. If the double fills
+\ up, then we stop since the double has more significant digits than a
+\ float has. If the float fills up before we get to the decimal place,
+\ then we have to add one to the exponent for every digit before the
+\ decimal place we miss.
+\ the double is then converted to a float, which we divide or multiply
+\ by the appropriate power of 10 to get the exponent right
+\ finially, we restore the sign
+
+\ string of form 'integer'.'fractioal'e'exp'
+: string>float ( c-addr u-length -- f )
+  \ get exponent first -- this is the number that follows e, E, d, or D
+  101 extract not if drop \ 'e'
+  69  extract not if drop \ 'E'
+  100 extract not if drop \ 'd'
+  68  extract not if drop \ 'D'
+    0 \ if you can't find anything, then it's zero
+  then then then then
+
+  >r ( adr length, R: exp )
+
+  over c@ 45 = if \ starts with negative sign
+    r> true >r >r ( adr length, R: bool-isneg exp)
+    1- swap 1+ swap ( adr+1 length-1, R: bool-isneg exp)
+  else
+    r> false >r >r
+  then ( adr length, R: bool-isneg exp)
+
+  over c@ 43 = if \ if it's a plus sign, just ignore it, but reduce string size
+    1- swap 1+ swap ( adr+1 length-1, R: bool-isneg exp)
+  then
+
+  r> rot rot ( exp adr length, R: bool-isneg )
+
+  [ 0. ] fliteral fnswap ( exp adr d-0 length, R: bool-isneg )
+  >r false nfswap r> ( exp adr bool-after_decimal d-0 length, R: bool-isneg )
+
+  0 do ( exp adr bool-after_decimal d-0 )
+    \ get next character
+    fover drop i + c@ ( exp adr bool-after_decimal d-sum char )
+    dup 46 = if \ it's a '.'
+      drop \ get rid of character
+      fnover if \ we've already encountered a decimal point
+        abort
+      then
+      \ we're after the decimal now, so make bool-after_decimal true
+      fnswap drop true nfswap ( exp adr bool-after_decimal d-sum )
+    else
+      nfover [ 214748364. ] fliteral d> if \ d-sum can't hold any more
+        drop \ don't care about character
+        fnover not if
+          \ we're before the decimal place, so add one to the exponent
+          >r >r >r >r 1+ r> r> r> r>
+        else
+          leave \ there's nothing left to do if we're after the decimal place
+        then
+      else
+        48 - ( exp adr bool-after_decimal d-sum possible-digit )
+        dup 0 < ( exp adr bool-after_decimal d-sum pd bool )
+        over 9 > ( exp adr bool-after_decimal d-sum pd bool bool )
+        or if abort then \ it's not a digit, abort
+        ( exp adr bool-after_decimal d-sum digit )
+        >r d10* r> s>d d+ ( exp adr bool-after_decimal d-sum )
+        fnover if ( exp adr bool-after_decimal d-sum )
+          >r >r >r >r 1- r> r> r> r> \ decriment the exponent by one
+        then
+      then
+    then
+  loop ( exp adr bool-after_decimal d-sum, R: bool-isneg )
+
+  >r >r drop drop r> r> ( exp d-sum, R: bool-isneg )
+
+  d>f fnswap ( f-sum exp, R: bool-isneg )
+
+  \ next, take care of the exponent
+  f10^n f* \ take care of the exponent
+  ( f, R: bool-isneg )
+
+  \ take care of negative sign
+  r> negateiftrue ;
+  
+ \ Parse a floating point number
+: f# ( "fpnumber" -- float )
+   string>float abort" floatnumber?"
+   state if postpone fliteral then
+  ; immediate
 
 marker -fpmathend
 

@@ -1,29 +1,32 @@
-Beta only as of 17-7-2014
+Beta as of 17-7-2014 (and 3-June-2015)
 
-This is a part of the FlashForth 5.0 for pic24/33 with added Cfloats.c and Cfloat.s 
-for floating point support.
+Update: June 3rd 2015
+Added: atan2 sinh cosh tanh
 
-The /src/Clfoats.c includes the C math routines called from FF asm.
+This is a floating point library for pic24/33 with Cfloats.c and Cfloat.s for floating point support.
+
+It includes ready to run FlashForth example (under MplabX).
+
+The /src/Clfoats.c includes the C math routines called from asm.
 The /src/Cfloats.s includes the asm calls to the C code.
 
-The FF asm shall be compiled under MplabX. You have to add Cfloats.c to the Sources (to be compiled).
+The library shall be compiled under MplabX. You have to add Cfloats.c to the Sources (in order to be compiled/linked in).
 
-In this repo you may find included the stripped down and modified Leon's fp library for FF 5.0.
+In this repository you may find included a stripped down and modified Leon's fp library.
 
 After you compile the FF asm, you may see these new floating point words 
 
-      facos   fasin   fatan   flog10  flog    fexp
-      fsqrt   ftan    fcos    fsin    fpow    f/      f*      f-
-      f+
+      	fatan2	fsinh	fcosh	ftanh	facos	fasin	fatan	flog10  		flog	fexp	fsqrt   ftan    fcos    fsin    fpow    f/      
+	f*	f-	f+
 
 within the basic wordset of FF.
 
 Then:
 
-	1. you have to upload the do-loop
-	2. you have to upload the FF_float_NOPRIM_5.fth	(the stripped down and modded Leon's lib)  
+	1. you have to upload the do-loop word if not in basic wordset 
+	2. you have to upload the FF_float_NOPRIM_5.fth	or FF_float_NOPRIM_6.fth  
 
-Tested under FlashForth 5.0 and dspic33/pic24. 
+Tested under FlashForth 5.0 and with dspic33/pic24. 
 
 Benchmarks of some fp words (assuming 1.5 clock per cpu instr in an average):
 
@@ -45,12 +48,12 @@ Benchmarks of some fp words (assuming 1.5 clock per cpu instr in an average):
 	btanh 2.76992e3 CPU INSTRs per ftanh ok<#,ram>
 
 
-Leon's original fp library written in forth:
+Leon's original fp library written in forth for amforth:
 
 https://github.com/lnmaurer/amforth-float
 
 
-All under the GPL v3 licence.
+All under the GPL v3 licence. No warranties of any kind. Provided as-is.
 
-IgorM c 2015
+IgorM copyright 2014-2015
 

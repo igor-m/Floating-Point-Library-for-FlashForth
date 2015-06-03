@@ -1,6 +1,7 @@
-// IgorM 7/2014
-// C floats routines for FF 5.0
-// Under GNU GPL v3
+// IgorM copyright 7/2014 (v.0.1)
+// IgorM copyright 3 June 2015 (v.0.2)
+// C floats mathe routines for FF 5.0
+// Licence under GNU GPL v3
 
 
 #include <stddef.h>
@@ -81,6 +82,25 @@ float Cfacos(float x)
     return acosf(x);
 }
 
+float Cfatan2(float x, float y)
+{
+    return atan2f(x, y);
+}
+
+float Cftanh(float x)
+{
+    return tanhf(x);
+}
+
+float Cfsinh(float x)
+{
+    return sinhf(x);
+}
+
+float Cfcosh(float x)
+{
+    return coshf(x);
+}
 
 
 
