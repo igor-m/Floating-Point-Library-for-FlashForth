@@ -16,15 +16,16 @@ In this repository you may find included a stripped down and modified Leon's fp 
 
 After you compile the FF asm, you may see these new floating point words 
 
-      	fatan2	fsinh	fcosh	ftanh	facos	fasin	fatan	flog10  		flog	fexp	fsqrt   ftan    fcos    fsin    fpow    f/      
-	f*	f-	f+
+	fatan2	fsinh	fcosh	ftanh	facos	fasin	fatan	flog10
+	flog	fexp	fsqrt	ftan	fcos	fsin	fpow
+	f/	f*	f-	f+
 
-within the basic wordset of FF.
+within the basic wordset.
 
 Then:
 
 	1. you have to upload the do-loop word if not in basic wordset 
-	2. you have to upload the FF_float_NOPRIM_5.fth	or FF_float_NOPRIM_6.fth  
+	2. you have to upload the FF_float_NOPRIM_5.fth	or FF_float_NOPRIM_6.txt  
 
 Tested under FlashForth 5.0 and with dspic33/pic24. 
 
