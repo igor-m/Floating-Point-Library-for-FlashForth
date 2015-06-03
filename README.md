@@ -2,6 +2,7 @@ Beta as of 17-7-2014 (and 3-June-2015)
 
 Update: June 3rd 2015
 Added: atan2 sinh cosh tanh
+Workaround: with fpow which crashes with original (in Cfloats.c)
 
 This is a floating point library for pic24/33 with Cfloats.c and Cfloat.s for floating point support.
 

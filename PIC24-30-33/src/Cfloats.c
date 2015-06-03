@@ -54,7 +54,11 @@ float Cfexp(float x)
 
 float Cfpow(float x, float y)
 {
-    return powf(x, y);
+   // return powf(x, y);
+   // IgorM 3.6.2015: simple workaround 
+   // !! pow is more complex
+    if (x <= 0.0) return 0.0;
+    return expf(y*logf(x));
 }
 
 float Cflog10(float x)
