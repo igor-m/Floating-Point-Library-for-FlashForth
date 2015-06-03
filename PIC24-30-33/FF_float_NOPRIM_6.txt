@@ -708,10 +708,12 @@ decimal
   r> negateiftrue ;
   
  \ Parse a floating point number
-: f# ( "fpnumber" -- float )
-   string>float abort" floatnumber?"
-   state if postpone fliteral then
-  ; immediate
+ \ f# 3.141592e f# -0.0345e12 f* fs.
+: f# ( "fpformatword" -- float )
+	bl word c@+
+	string>float abort" floatnumber?"
+	state if postpone fliteral then
+	; immediate
 
 marker -fpmathend
 
